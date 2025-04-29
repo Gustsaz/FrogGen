@@ -31,4 +31,3 @@ document.getElementById('loadFrog').addEventListener('click', async function() {
         console.error('Erro ao carregar a imagem do sapo:', error);
     }
 });
-    
