@@ -1,1 +1,18 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #e0ffe0;
+}
 
+#chat {
+  margin: 20px auto;
+  width: 80%;
+  max-width: 400px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: left;
+  height: 300px;
+  overflow-y: scroll;
+  border: 1px solid #aaa;
+}
