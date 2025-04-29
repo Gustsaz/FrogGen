@@ -1,7 +1,6 @@
 document.getElementById('loadFrog').addEventListener('click', async function() {
     try {
-        // Usando outro proxy CORS
-        const response = await fetch('https://thingproxy.freeboard.io/fetch/https://frogs.media/api/images/frog', {
+        const response = await fetch('https://api.unsplash.com/photos/random?query=frog&client_id=SUA_CHAVE_DE_API', {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -14,14 +13,12 @@ document.getElementById('loadFrog').addEventListener('click', async function() {
 
         const data = await response.json();
         
-        // Exibir a imagem
-        const frogImageUrl = data.url;
+        const frogImageUrl = data[0].urls.full; // Acessando o link da imagem
         
-        // Criar um elemento de imagem para exibir
         const imgElement = document.createElement('img');
         imgElement.src = frogImageUrl;
         imgElement.alt = 'Sapo';
-        imgElement.style.maxWidth = '100%'; // Para ajustar a imagem ao tamanho da tela
+        imgElement.style.maxWidth = '100%';
         
         const container = document.getElementById('frogImageContainer');
         container.innerHTML = ''; // Limpar a imagem anterior, se houver
