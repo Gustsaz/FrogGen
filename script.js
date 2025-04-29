@@ -1,13 +1,13 @@
 document.getElementById('loadFrog').addEventListener('click', async function() {
     try {
-        const response = await fetch('https://frogs.media/api/images/frog', {
+        // Usando outro proxy CORS
+        const response = await fetch('https://thingproxy.freeboard.io/fetch/https://frogs.media/api/images/frog', {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
             },
         });
-        
-        // Se o status da resposta não for 2xx, lançamos um erro
+
         if (!response.ok) {
             throw new Error(`Erro ao carregar imagem: ${response.statusText}`);
         }
