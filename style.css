@@ -1,40 +1,43 @@
+/* styles.css */
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
     background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
-    padding: 0;
 }
 
 .container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
+    text-align: center;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
 }
 
 h1 {
-    font-size: 2em;
-    color: #333;
+    color: #2c3e50;
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #4CAF50;
+    background-color: #27ae60;
     color: white;
     border: none;
-    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
-    margin-top: 20px;
+    border-radius: 5px;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #2ecc71;
 }
 
-#frogImageContainer {
-    margin-top: 30px;
+#frogImageContainer img {
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
 }
