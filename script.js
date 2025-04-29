@@ -1,27 +1,33 @@
 document.getElementById('loadFrog').addEventListener('click', async function() {
     try {
-        const response = await fetch('https://api.unsplash.com/photos/random?query=frog&client_id=SUA_CHAVE_DE_API', {
+        // Substituímos pela sua chave de API do Unsplash
+        const response = await fetch('https://api.unsplash.com/photos/random?query=frog&client_id=744877', {
             method: 'GET',
             headers: {
-                'Accept': 'application/json',
+                'Accept': 'application/json',  // Especifica que queremos uma resposta JSON
             },
         });
 
+        // Verifica se a resposta foi bem-sucedida
         if (!response.ok) {
             throw new Error(`Erro ao carregar imagem: ${response.statusText}`);
         }
 
+        // Converte a resposta para JSON
         const data = await response.json();
         
-        const frogImageUrl = data[0].urls.full; // Acessando o link da imagem
+        // A URL da imagem vem no campo "urls.full" (mude de acordo com o que você quer)
+        const frogImageUrl = data[0].urls.full;
         
+        // Crie um elemento de imagem para exibir
         const imgElement = document.createElement('img');
         imgElement.src = frogImageUrl;
         imgElement.alt = 'Sapo';
-        imgElement.style.maxWidth = '100%';
+        imgElement.style.maxWidth = '100%';  // Ajusta a imagem ao tamanho da tela
         
+        // Exibe a imagem no container
         const container = document.getElementById('frogImageContainer');
-        container.innerHTML = ''; // Limpar a imagem anterior, se houver
+        container.innerHTML = ''; // Limpa a imagem anterior, se houver
         container.appendChild(imgElement);
 
     } catch (error) {
